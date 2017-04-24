@@ -53,23 +53,36 @@ describe 'MyHash' do
     end
   end
 
-  describe("#myEach") do
-    it("returns the total number pairs in the Hash") do
+  describe("#toArray") do
+    it("returns a new array made from all myHash elements") do
       test_hash = MyHash.new()
       test_hash.myStore("kitten", "cute")
-      expect(test_hash.myEach()).to(eq(["kitten", "cute"]))
+      test_hash.myStore("chicharron", "malo")
+      expect(test_hash.toArray()).to(eq([["kitten", "cute"],["chicharron", "malo"]]))
     end
   end
 
-  # describe("#myMerge") do
-  #   it("merges 2 hashes and returns a new hash") do
-  #     test_hash1 = MyHash.new()
-  #     test_hash2 = MyHash.new()
-  #     test_hash1.myStore("kitten", "cute")
-  #     test_hash2.myStore("chicharron", "malo")
-  #     expect(test_hash1.myMerge(test_hash2)).to(eq([["kitten", "cute"],["chicharron", "malo"]]))
-  #   end
-  # end
+  describe("#myMerge") do
+    it("merges 2 hashes and returns a new hash") do
+      test_hash1 = MyHash.new()
+      test_hash2 = MyHash.new()
+      test_hash1.myStore("kitten", "cute")
+      test_hash2.myStore("chicharron", "malo")
+      expect(test_hash1.myMerge(test_hash2)).to(eq([["kitten", "cute"],["chicharron", "malo"]]))
+    end
+  end
+
+  describe("#myMerge") do
+    it("merges 2 hashes and returns a new hash") do
+      test_hash1 = MyHash.new()
+      test_hash2 = MyHash.new()
+      test_hash1.myStore("kitten", "cute")
+      test_hash1.myStore("puppy", "fluffy")
+      test_hash2.myStore("persona", "non grada")
+      test_hash2.myStore("tiny", "dancer")
+      expect(test_hash1.myMerge(test_hash2)).to(eq([["kitten", "cute"],["puppy", "fluffy"],["persona", "non grada"],["tiny", "dancer"]]))
+    end
+  end
 
 
 end

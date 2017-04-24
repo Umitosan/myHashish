@@ -40,20 +40,21 @@ class MyHash
     count
   end
 
-  define_method(:myEach) do
-    pair = []
+  define_method(:toArray) do
+    pairArr = []
     @myPairs.each do |myPair|
-      pair = myPair
+      pairArr.push(myPair)
     end
-    pair
+    pairArr
   end
 
   define_method(:myMerge) do |userHash|
     newArr = []
-    self.myEach do |pair1|
+    @myPairs.each do |pair1|
       newArr.push(pair1)
     end
-    userHash.myEach do |pair2|
+    userHashArr = userHash.toArray
+    userHashArr.each do |pair2|
       newArr.push(pair2)
     end
     newArr
