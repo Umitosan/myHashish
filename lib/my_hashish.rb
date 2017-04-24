@@ -21,4 +21,15 @@ class MyHash
     myVal
   end
 
+  define_method(:has_key?) do |key|
+    result = false
+    @myPairs.each do |pair|
+      if pair.include?(key)
+        result = true
+      end
+      result
+    end
+    result
+  end
+
 end
