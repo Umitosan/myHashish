@@ -3,13 +3,14 @@ require "rspec"
 require "pry"
 
 
+describe 'MyHash' do
 
-
-describe 'Palindrome#isWord?' do
-  let(:word) { Palindrome.new }
-
-  it "returns true if the word has at least one vowel" do
-    expect(word.is_word?("word")).to eq true
+  describe("#myFetch") do
+    it("retrieves a stored value by its key") do
+      test_hash = MyHash.new()
+      test_hash.myStore("kitten", "cute")
+      expect(test_hash.myFetch("kitten")).to(eq("cute"))
+    end
   end
 
 end

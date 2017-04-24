@@ -1,9 +1,24 @@
-# example ruby code
+class MyHash
 
-# class Palindrome
+  define_method(:initialize) do
+    @myPairs = []
+  end
 
-#   def is_word?(user_input)
-#     user_input.match?(/[aeiouy]+/i)
-#   end
+  define_method(:myStore) do |key, value|
+    @myPairs.push([key,value])
+  end
 
-# end
+  define_method(:myFetch) do |key|
+    myVal = 12345
+    @myPairs.each do |pair|
+      if pair.include?(key)
+        myVal = @myPairs[@myPairs.index(pair)][1]
+      else
+        myVal = "didn't find anything"
+      end
+      myVal
+    end
+    myVal
+  end
+
+end
