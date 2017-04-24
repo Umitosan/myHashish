@@ -41,11 +41,7 @@ class MyHash
   end
 
   define_method(:toArray) do
-    pairArr = []
-    @myPairs.each do |myPair|
-      pairArr.push(myPair)
-    end
-    pairArr
+    @myPairs
   end
 
   define_method(:myMerge) do |userHash|
