@@ -32,4 +32,31 @@ class MyHash
     result
   end
 
+  define_method(:length) do
+    count = 0
+    @myPairs.each do
+      count += 1
+    end
+    count
+  end
+
+  define_method(:myEach) do
+    pair = []
+    @myPairs.each do |myPair|
+      pair = myPair
+    end
+    pair
+  end
+
+  define_method(:myMerge) do |userHash|
+    newArr = []
+    self.myEach do |pair1|
+      newArr.push(pair1)
+    end
+    userHash.myEach do |pair2|
+      newArr.push(pair2)
+    end
+    newArr
+  end
+
 end
